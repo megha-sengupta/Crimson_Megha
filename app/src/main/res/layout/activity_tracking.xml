@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".tracking"
+    tools:layout_editor_absoluteY="81dp">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="160dp"
+        android:layout_height="46dp"
+        android:text="Enter new Expense"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        tools:layout_editor_absoluteX="112dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="68dp"
+        android:layout_height="36dp"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="255dp"
+        tools:layout_editor_absoluteY="94dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="93dp"
+        android:layout_height="40dp"
+        android:text="Amount"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="112dp"
+        tools:layout_editor_absoluteY="104dp" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="258dp"
+        android:layout_height="36dp"
+        android:entries="@array/catogary_array"
+        android:prompt="@string/catogary_prompt"
+        tools:layout_editor_absoluteX="79dp"
+        tools:layout_editor_absoluteY="306dp" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="185dp"
+        android:layout_height="34dp"
+        android:text="Type of Expense"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="253dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="94dp"
+        android:layout_height="46dp"
+        android:text="Update"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="387dp" />
+
+
+</android.support.constraint.ConstraintLayout>
