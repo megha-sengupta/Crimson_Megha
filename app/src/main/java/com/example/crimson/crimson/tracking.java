@@ -12,17 +12,25 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.auth.FirebaseUser;
+
+
 import android.text.TextUtils;
 import android.widget.Toast;
 
+
 public class tracking extends AppCompatActivity {
-    private TextView amount, date, time;
+
     private EditText actualAmount;
     private Button bu1;
     private Spinner spinner;
+    private DatabaseReference ref= FirebaseDatabase.getInstance().getReference();
 
-    private FirebaseAuth mAuth;
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private FirebaseAuth.AuthStateListener mAuthListener;
+    public String amount1,name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +39,7 @@ public class tracking extends AppCompatActivity {
         actualAmount = (EditText) findViewById(R.id.editText3);
         spinner = (Spinner) findViewById(R.id.spinner1);
         bu1 = (Button) findViewById(R.id.button);
-        mAuth = FirebaseAuth.getInstance();
+
         bu1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,11 +47,13 @@ public class tracking extends AppCompatActivity {
             }
         });
     }
-        public void update(){
+        public void update() {
 
-            String amount1 = actualAmount.getText().toString();
-            String name = spinner.getSelectedItem().toString();
-            if (TextUtils.isEmpty(amount1) || TextUtils.isEmpty(name)|| (name =="Choose a category")) {
+            amount1 = actualAmount.getText().toString();
+            //TextView textView = (TextView)spinner.getSelectedView();
+            //name = textView.getText().toString();
+            name = spinner.getSelectedItem().toString();
+            if (TextUtils.isEmpty(amount1) || name.equals("Choose a category")) {
                 new AlertDialog.Builder(this).setMessage("Enter All Details").setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -51,12 +61,20 @@ public class tracking extends AppCompatActivity {
                         spinner.setSelection(0);
                     }
 
-                });
-            }
-                else{
+                }).create().show();
+            } else {
                 //firebase has to  be implemented here.
-        Toast.makeText(tracking.this, "Updated", Toast.LENGTH_LONG).show();
-          actualAmount.setText(null);
+
+                setUserInfo();
+                actualAmount.setText(null);
+                spinner.setSelection(0);
+            }
         }
+        public void setUserInfo()
+            {
+                UpdateInfo info = new UpdateInfo(amount1,name);
+                FirebaseUser user = mAuth.getCurrentUser();
+                ref.child(user.getUid()).setValue(info);
+                Toast.makeText(tracking.this,"Details entered succesfully!",Toast.LENGTH_LONG).show();
+            }
     }
-}

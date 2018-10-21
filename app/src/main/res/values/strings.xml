@@ -8,17 +8,17 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-<string name="catogary_prompt">Choose a catogary</string>
+    <string name="catogary_prompt">Choose a catogary</string>
     <string-array name="catogary_array">
         <item>Choose a category</item>
-    <item>Food</item>
-    <item>Rent/Housing</item>
-    <item>Cloths</item>
-    <item>Grocery</item>
-    <item>Medicines</item>
-    <item>Stationary</item>
-    <item>Miscellaneous</item>
-</string-array>
+        <item>Food</item>
+        <item>Rent/Housing</item>
+        <item>Cloths</item>
+        <item>Grocery</item>
+        <item>Medicines</item>
+        <item>Stationary</item>
+        <item>Miscellaneous</item>
+    </string-array>
 
 </resources>
 
