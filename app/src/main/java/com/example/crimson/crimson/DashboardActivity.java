@@ -56,7 +56,7 @@ public class DashboardActivity extends AppCompatActivity
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DashboardActivity.this, tracking.class));
+                startActivity(new Intent(DashboardActivity.this, EditDeleteActivity.class));
             }
         });
 

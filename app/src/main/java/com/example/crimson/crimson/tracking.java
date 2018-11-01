@@ -16,6 +16,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.text.*;
+import java.util.*;
+import java.time.*;
 
 import android.text.TextUtils;
 import android.widget.Toast;
@@ -31,6 +34,8 @@ public class tracking extends AppCompatActivity {
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private FirebaseAuth.AuthStateListener mAuthListener;
     public String amount1,name;
+    public LocalDateTime dateTime;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +68,6 @@ public class tracking extends AppCompatActivity {
 
                 }).create().show();
             } else {
-                //firebase has to  be implemented here.
 
                 setUserInfo();
                 actualAmount.setText(null);
@@ -72,7 +76,7 @@ public class tracking extends AppCompatActivity {
         }
         public void setUserInfo()
             {
-                UpdateInfo info = new UpdateInfo(amount1,name);
+                UpdateInfo info = new UpdateInfo(amount1,name,dateTime);
                 FirebaseUser user = mAuth.getCurrentUser();
                 ref.child(user.getUid()).setValue(info);
                 Toast.makeText(tracking.this,"Details entered succesfully!",Toast.LENGTH_LONG).show();

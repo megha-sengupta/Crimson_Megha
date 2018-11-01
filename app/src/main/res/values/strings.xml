@@ -8,8 +8,8 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="catogary_prompt">Choose a catogary</string>
-    <string-array name="catogary_array">
+    <string name="category_prompt">Choose a category</string>
+    <string-array name="category_array">
         <item>Choose a category</item>
         <item>Food</item>
         <item>Rent/Housing</item>

@@ -22,7 +22,10 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginLeft="37dp"
+        android:layout_marginTop="61dp"
         android:text="EDIT"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="253dp" />
+        app:layout_constraintStart_toStartOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 </android.support.constraint.ConstraintLayout>

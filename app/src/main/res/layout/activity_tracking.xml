@@ -57,8 +57,8 @@
         android:layout_marginEnd="47dp"
         android:layout_marginRight="47dp"
         android:layout_marginBottom="45dp"
-        android:entries="@array/catogary_array"
-        android:prompt="@string/catogary_prompt"
+        android:entries="@array/category_array"
+        android:prompt="@string/category_prompt"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
